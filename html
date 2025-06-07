@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carta de Amor ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      background: #ffe6f2;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+    .heart {
+      position: absolute;
+      color: red;
+      animation: float 5s linear infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(-20vh) rotate(360deg); opacity: 0; }
+    }
+    .letter {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 80%;
+      margin: 50px auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 10;
+    }
+    h1 {
+      color: #ff66b3;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Corazones infinitos (generados con JS) -->
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+      heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }
+    setInterval(createHeart, 300);
+  </script>
+
+  <!-- Carta de amor -->
+  <div class="letter">
+    <h1>Para Ti 💌</h1>
+    <p>Querida persona especial,</p>
+    <p>Eres la razón por la que mi corazón late más fuerte. Cada día a tu lado es un regalo.</p>
+    <p>Con amor infinito,</p>
+    <p style="text-align: right; color: #ff66b3;">❤️</p>
+  </div>
+</body>
+</html>
